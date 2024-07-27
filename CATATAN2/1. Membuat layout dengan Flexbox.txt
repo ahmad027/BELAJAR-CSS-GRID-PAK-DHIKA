@@ -13,33 +13,44 @@ membuat struktur HTML sebagai berikut
     </div>
 
 
-- class content digunakan untuk menampung agar bisa diletakkan bersebelahan 
+- pada header padding: 40px 0;
 
-- pada class sidebar diatur menjadi float: left ( agar terletak di sebelah kiri)
+- pada aside, padding: 60px 0;
 
-- atur width sidebar mejadi width: 40%;
+- pada nav, padding: 100px 0;
 
-- atur width main menjadi width: 60%;
+- pada main, padding tidak usah diatur
 
-- kalau terjadi collapse pada layout, coba dulu buat style
+- pada footer, padding: 20px 0;
+
+- buat style pada content 
 
     .content {
-        border: 3px solid red;
+        display: flex;
     }
 
-- tambah box-sozing: border-box; pada main 
+- atur lebar side bar menjadi flex: 1;
 
-- untuk menghapus float: left, atur style sebgai berikut 
-   
-    .content::after {
-        content: '';
-        display: block;
-        clear: both;
+    .sidebar {
+        flex: 1;
     }
 
-- jika masih ada sedikit spasi pada main, atur paddingnya menjadi 171.2px atau 171.5px
+- atur lebar main menjadi flex: 1.5;
 
-untuk keseluruhan code pada style.CSS
+    main {
+        flex: 1.5;
+    }
+
+- untuk menengahkan tulisan bisa menggunakan style seperti berikut
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+Untuk detail kode pada style.css sebagai berikut 
 
 body,
 html {
@@ -65,22 +76,18 @@ header {
   padding: 40px 0;
 }
 
-.content::after {
-  content: '';
-  display: block;
-  clear: both;
+.content {
+  display: flex;
 }
 
 .sidebar {
-  float: left;
-  width: 40%;
+  flex: 1;
 }
 
 .sidebar aside {
   background-color: blue;
   padding: 60px 0;
 }
-
 .sidebar nav {
   background-color: red;
   padding: 100px 0;
@@ -88,10 +95,10 @@ header {
 
 main {
   background-color: orange;
-  width: 60%;
-  float: right;
-  padding: 171.5px 0;
-  box-sizing: border-box;
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
