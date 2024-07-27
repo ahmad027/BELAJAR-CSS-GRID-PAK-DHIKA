@@ -1,0 +1,70 @@
+#1. Apa itu GRID 
+
+CSS Grid 
+    adalah Modul CSS baru untuk mendefinisikan sistem layout berbentuk gris dalam 2 dimensi (baris & kolom). 
+
+untuk mengatur agar bisa menggunakan Grid dengan kode sebagai berikut
+
+.container {
+    display: grid;
+}
+
+Misal ingin menggunakan grid untuk membuat layout web , setting kode pada .container sebagai berikut 
+
+.container {
+  width: 600px;
+  margin: 50px auto;
+  border: 5px solid #333;
+  box-sizing: border-box;
+  padding: 5px;
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'aside main'
+    'nav main'
+    'footer footer'; /* Mengatur template areas" /*
+  grid-template-columns: 1fr 1.5fr;  /* Mengatur ukuran template columns (kolom)" /*
+  grid-template-rows: 1fr 1fr 1.3fr; /* Mengatur ukuran template rows (baris)" /*
+}
+
+
+pada tiap tag yang sudah didaftarkan di grid-template-areas, kita definisikan dengan 
+
+grid-area: {nama area yng sudah didaftarkan};
+
+
+Untuk kode lengkapnya seperti berikut 
+
+header {
+  background-color: purple;
+  grid-area: header; /* mengatur area menjadi header */
+  display: flex; */ kalau tidak diatur paddingnya, maka harus mengatur tata letak tulisanya */ 
+  justify-content: center; /* agar teks terletak ditengah secara horizontal */
+  align-items: center; /* agar teks terletak ditengah secara vertikal */
+}
+
+aside {
+  background-color: blue;
+  grid-area: aside; /* mengatur area menjadi aside */
+  padding: 60px 0;
+}
+
+nav {
+  background-color: red;
+  grid-area: nav; /* mengatur area menjadi nav */
+  padding: 100px 0;
+}
+
+main {
+  background-color: orange;
+  grid-area: main; /* mengatur area menjadi main */
+  display: flex; */ kalau tidak diatur paddingnya, maka harus mengatur tata letak tulisanya */ 
+  justify-content: center; /* agar teks terletak ditengah secara horizontal */
+  align-items: center; /* agar teks terletak ditengah secara vertikal */
+}
+
+footer {
+  background-color: #666;
+  grid-area: footer; /* mengatur area menjadi footer */
+  padding: 20px 0;
+}

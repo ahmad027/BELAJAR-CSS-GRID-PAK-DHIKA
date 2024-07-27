@@ -1,0 +1,57 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: arial;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.container {
+  width: 600px;
+  margin: 50px auto;
+  border: 5px solid #333;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+header {
+  background-color: purple;
+  padding: 40px 0;
+}
+
+.content::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.sidebar {
+  float: left;
+  width: 40%;
+}
+
+.sidebar aside {
+  background-color: blue;
+  padding: 60px 0;
+}
+
+.sidebar nav {
+  background-color: red;
+  padding: 100px 0;
+}
+
+main {
+  background-color: orange;
+  width: 60%;
+  float: right;
+  padding: 171.5px 0;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #666;
+  padding: 20px 0;
+}
