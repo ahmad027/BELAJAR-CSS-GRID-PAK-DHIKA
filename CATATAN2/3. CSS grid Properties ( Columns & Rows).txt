@@ -1,0 +1,101 @@
+Untuk container 
+ Tentu, berikut adalah properti CSS Grid pada container:
+
+    display
+    grid-template-columns
+    grid-template-rows
+    grid-auto-columns
+    grid-auto-rows
+    grid-auto-flow
+    grid-template-areas
+    grid-template
+    grid-column-gap
+    grid-row-gap
+    grid-gap
+    grid
+
+    justify-items
+    align-items
+    place-items
+    justify-content
+    align-content
+    place-content
+
+untuk item container 
+
+Berikut adalah properti CSS untuk item pada CSS Grid:
+
+    grid-column-start
+    grid-column-end
+    grid-row-start
+    grid-row-end
+    grid-column
+    grid-row
+    grid-area
+    justify-self
+    align-self
+    place-self
+   
+Untuk setting Column & Rows, propertiesnya sebagai berikut : 
+
+    display
+    grid-template-columns
+    grid-template-rows
+    grid-auto-columns
+    grid-auto-rows
+    grid-auto-flow
+
+- grid-template-columns & grid-template-rows 
+    
+    Mendefinisilan kolom / baris dengan cara menuliskan nilai dipisahkan oleh spasi. Nilai merepresentasikan ukuran grid track dan spasi merepresentasikan grid line. 
+
+    cara penulisannya sebagai berikut : 
+
+    .container {
+        display: grid;
+        grid-template-columns: <track-size> ... | <line-name> <track-size> ...;
+        grid-template-rows: <track-size> ... | <line-name> <track-size> ...;
+    }
+
+    <track-size> bisa berupa px % auto atau fr (fraction)
+
+    <line-name> nama yang bisa diberikan pada track 
+
+Implicit & Explicit Grid
+
+    Expilict, ketika kita secara jelas menuliskan ukuran gridnya ( column dan row)
+
+    Implicit, ketika gridnya menentukan secara otomatis sisanya dari column dan rownya yang tidak kita tentukan secara eksplicit. 
+
+grid-auto-columns & grid-auti-rows 
+
+    mengatur ukuran grid track yang tidak dituliskan pada grid-template ( implicit track)
+
+    .container {
+        grid-auto-columns: <track-size>;
+        grid-auto-rows: <track-size>;
+    }
+
+grid-auto-flow 
+
+    mengatur penempatan item / cell pada grid track, termauk yang ditulis secara implicit 
+
+    .container {
+        grid-auto-flow: row | column | row dense | column dense;
+    }
+
+
+Grid Values 
+
+    fr (fraction)
+
+    .container {
+        width: 60%;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr 3.5fr;
+        grid-template-rows: 2fr 1fr 5fr;
+    }
+
+
+
