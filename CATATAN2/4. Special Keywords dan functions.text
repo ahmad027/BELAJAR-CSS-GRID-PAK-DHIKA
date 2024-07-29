@@ -1,0 +1,55 @@
+#4 Special Keywords & Functions 
+
+Special Functions & Keyword 
+
+- repeat()
+- min-content & max-content 
+- minmax()
+- auto-fill & auto-fit 
+
+- repeat()
+
+    untuk menentukan ukuran grid track secara berulang 
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+- min-content & max-content
+
+    untuk menentukan seberapa besar ukuran grid track berdasarkan content pada sebuah item 
+
+    .container {
+        display: grid;
+        grid-template-columns: min-content | max-content;
+    }
+
+    min-content (yang diambil ukuran terkecil) misal penulisan Ahmadddd reza, kalau min-content tulisan reza kebawah (walupun yang diambil ukuran paling kecil, tapi kalau ada dua kata yang diambil kata terpanjang)
+
+    max-content (yang diambil ukuran terbesar) misal penulisan Ahmadddd reza, ukurannnya sepanjang 2 kata tersebut (berbeda dengan min-content yang mana kata kedua kebawah)
+
+- auto-fill & auto-fit 
+
+    untuk menetukan jumla item untuk berada pada grid track (biasanya digunkan dalam nilai repeat())
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit | auto-fill, 150px);
+    }
+
+    auto-fit kalau itemnya lebih sedikit dari lebar ukuran container maka  gridnya secara eksplicit di elemen terakhirnya, sedangkan auto-fill walaupun itemnya lebih sedikit dari lebar ukuran container maka grid nya secara eksplisit akan berakhir di elemen kosong yang tersisa yang sanggup menampung elemen yang akan ditambahkan. 
+
+    Ringkasan Perbedaan:
+
+    auto-fill: Mengisi grid dengan kolom atau baris sebanyak mungkin, termasuk yang kosong.
+    auto-fit: Mengisi grid dengan kolom atau baris sebanyak mungkin, tetapi kolom atau baris kosong akan menyusut sehingga tidak memakan ruang.
+
+- minmax() 
+
+   untuk menentukan ukuran minimal dan maksimal dari grid track 
+
+   .container {
+    display: grid;
+    grid-template-columns: minmax(200px, 300px);
+   }
