@@ -1,0 +1,114 @@
+# 6. Grid Alignment 
+
+- justify-items 
+- align-items 
+- place-items
+- justify-content 
+- align-content 
+- place-content 
+
+
+- justify-items 
+
+    Mensejajarkan grid-items pada sumbu horizontal
+
+    default (stretch)
+
+    kalau width tiap item tidak diatur, maka lebar box memanjang secara horizontal mengisi ukuran column dari grid (khusus nilai stretch)
+
+    kalau width tiap item tidak diatur, maka lebar box hanya seukuran dengan kontent-nya (selain nilai strecth)
+
+    kalau sudah menetapkan width pada itemnya, maka nilai stertch hasilnya seperti dengan nilai start 
+
+    .container {
+        justify-items: start | end | center | strecth;
+    } 
+
+- align-items 
+
+    Mensejajarkan grid-items pada sumbu vertikal
+
+    default (stretch)
+
+    kalau height tiap item tidak diatur, maka panjang kebawah box memanjang secara vertikal mengisi ukuran baris dari grid (khusus nilai stretch)
+
+    kalau height tiap item tidak diatur, maka panjang kebawah box hanya seukuran dengan kontent-nya (selain nilai strecth)
+
+    kalau sudah menetapkan height  pada itemnya, maka nilai stertch hasilnya seperti dengan nilai start 
+
+    .container {
+        align-items: start | end | center | stretch;
+    }
+
+- place-items 
+
+    shorthand untuk menulis justify-items dan align-items dalam satu deklarasi 
+
+    INGAT!! urutanya align-items dulu baru justify-items 
+
+    kalau nilainya sama (misal center semua), maka bisa menuliskan satu nilai saja (center)
+
+    .container {
+        place-items: center;
+        /* Ini berarti nilai align-items: center; dan nilai justify-items: center; */
+    }
+
+    .container {
+        place-items: <align-items> <justify-items>;
+    }
+
+- justify-content 
+
+    Mengatur posisi seluruh grid container pada sumbu horizontal 
+
+    ini bisa dilakukan ketika ukuran total grid lebih kecil dari ukuran container-nya, biasanya ketika grid items-nya menggunakan ukuran yang fixed (px)
+
+    default (stretch)
+
+    jika width tiap item tidak diatur, maka lebar itemnya akan memenuhi lebar width column grid (semua nilai / beda dengan justify-items)
+
+    jika width tiap item diatur maka nilai strecth hasilnya seperti dengan nilai start 
+
+
+
+    .container {
+        justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+    }
+
+- align-content 
+
+    Mengatur posisi seluruh grid container pada sumbu vertikal
+
+    ini bisa dilakukan ketika ukuran total grid lebih kecil dari ukuran container-nya, biasanya ketika grid items-nya menggunakan ukuran yang fixed (px)
+
+    default (stretch)
+
+    jika height tiap item tidak diatur, maka panjang ke bawah itemnya akan memenuhi panjang height baris grid (semua nilai / beda dengan align-items)
+
+    jika height tiap item diatur maka nilai strecth hasilnya seperti dengan nilai start 
+
+    .container {
+        align-content: start | end | center | stretch | space-around | space-between | space-evenly;
+    }
+
+- place-content 
+
+    shorthand untuk menulis justify-contrnt dan align-content dalam satu deklarasi 
+
+    INGAT!! urutanya align-content dulu baru justify-content 
+
+    kalau nilainya sama (misal center semua), maka bisa menuliskan satu nilai saja (center)
+
+    .container {
+        place-content: center;
+        /* Ini berarti nilai align-content: center; dan nilai justify-content: center; */
+    }
+
+    .container {
+        place-content: <align-content> <justify-content>;
+    }
+
+
+Perbedaan justify-content dengan justify-items 
+
+    Dengan menggunakan justify-items, Anda mengatur posisi setiap elemen grid secara individual, sedangkan dengan justify-content, Anda mengatur posisi seluruh konten grid sebagai satu kesatuan.
