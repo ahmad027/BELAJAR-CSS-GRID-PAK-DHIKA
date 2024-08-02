@@ -1,0 +1,101 @@
+# 8. Membuat website sederhana 
+
+belajar css grid 
+
+https://cssgrid.io/
+
+terdiri dari 
+- navigasi 
+- hero (header)
+- services 
+- gallery 
+
+website dikecilin 
+
+- navigasi berpindah ke bawah 
+- logonya hilang 
+- di gambar muncul tulisan 
+
+
+Jika diperkecil lagi 
+- servicenya responsive 
+- navigasinya hilang berganti dengan hamburger menu
+
+
+Tampilan mobile 
+- bagian featurenya akan tutun ke bawah, dan tampilannya satu2 
+- sebelumnya muncul dari kanan, nanti dibuat muncul dari atas 
+
+
+
+Langkah - langkahnya 
+
+1. Copy image yang digunakan (3 gambar)
+    - gambar heronya , ukurannya 800 X 600 
+    - featurenya ada 2 gambar dengan ukuran 1024px X 1024px 
+
+2. Buat index.html 
+    
+3. Buat style.css
+    buat style dasarnya 
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    body {
+        background-color: #ddd;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 50px;
+    }
+
+4. Cari font Oswald pada font.google 
+
+    copy embednya, salin di paling atas style.css 
+
+    jangan lupa tambahkan 'Oswald' didepan font-family yang sebelumnya sudah diatur 
+
+     body {
+        background-color: #ddd;
+        font-size: 18px;
+        font-family: 'Oswald', Arial, Helvetica, sans-serif;
+        margin: 50px;
+    }
+
+5. Buat dulu struktur html nya sebagai berikut 
+
+    <div class="container">
+      <header class="header">
+        <div class="hero">
+            <h2 class="heading">Ahmad Merchandise</h2>
+            <p class="sub-heading">Casual Shoes</p>
+        </div>
+
+        <div class="features features-1">
+            <h4 class="price">IDR 250K</h4>
+            <p class="item">Black</p>
+        </div>
+
+        <div class="features features-2">
+            <h4 class="price">IDR 250K</h4>
+            <p class="item">Red</p>
+        </div>
+
+      </header>
+    </div>
+
+    - membuat class container untuk membungkus semua 
+    - membuat header dulu 
+    - pada header akan memunculkan 3 gambar ( hero, features-1, dan features-2)
+    - di hero ada tulisannya menggunakan h2 dengan class heading dan juga ada paragraph yang mempunyai class sub-heading 
+    - Tulisan pada hero akan dihilangkan jika lebarnya maksimal 
+    - Gambarnya diatur nanti menjadi background-image ( dikerjakan nanti)
+    - untuk tiap-tiap features yang mempunyai dua kelas features dan fatures-1 / features-2 menggunakan h4 dengan class price dan paragrap dengan class item  
+    - Buat tulisannya sesuai dengan gambar yang akan dimasukkan 
+    - sama seperti dengan hero, gambarnya akan diatur menjadi background-imagenya 
