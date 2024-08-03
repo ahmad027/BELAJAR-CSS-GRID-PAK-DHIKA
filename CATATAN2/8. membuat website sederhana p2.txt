@@ -172,4 +172,4 @@
   - justify-content dibuat center
   - align-item dibuat start ( dipinngir kiri gambar )
 
-30. pada tampilan tablet, navigasi hilang berubah menjadi tampilan menu hamburger (31:55)
+30. pada tampilan tablet, navigasi hilang berubah menjadi tampilan menu hamburger 

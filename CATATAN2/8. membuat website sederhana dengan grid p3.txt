@@ -1,0 +1,203 @@
+# 8. Membuat website sederhana dengan grid part 3
+
+31. Karena untuk hamburger menu sudah pernah dibuat, maka kita copy paste dari kode yang sudah ada 
+
+  di 
+  https://codepen.io/Ahmed-Mutaa/pen/MWMgPWG
+
+32. copy elemen hanya pada elemen dengan class menu-toggle , paste didalam nav ( paling awal sebelum class brand )
+
+33. copy css-nya, cari yang hanya menangani hamburger menu (sampai animasinya) paste code sebelum breakpoint
+
+34. copy pada bagian breakpoint handphone, paste diletakkan di breakpoint untuk tablet 
+
+35. ubah pada ukuran tablet, .menu tampil diatas lagi 
+  - pada breakpoint tablet, tambah code .menu {
+    order: -1;
+  }
+
+36. agar menu hamburger pindah ke kanan, tambah dengan justify content 
+  - pada breakpoint tablet, tambah code .menu {
+    order: -1;
+    justify-content: end;
+  }
+
+  kalau tidak berubah ganti dengan justify-items (karena ini grid, bukan flexbox)
+
+37. ubah warna menu toggle
+  - ubah pada .menu-toggle span, background-color : #000; menjadi hitam 
+  - tambahkan pada 
+  .menu-toggle input:checked ~ span:nth-child(2) $ (4) background-color: #fff; menjadi warna putih
+
+38. Mengubah agar menu bis atampil dari atas, kita copy dulu kode pada javascriptnya  (jangan lupa buat script src sebelum akhir body)
+
+39. Tampilan agak aneh, warna background dan menu navigasi acak2an 
+  - ubah dulu code di breakpoint tablet, ganti code transform: translateX(100%);
+  menjadi transform: translateY(-100%); diubah agar tampil dari atas 
+  - tambahkan transition: all 1s; agar transisi kelihatan
+  - jangan lupa ganti juga kode  transform: translateX(0);
+  menjadi  transform: translateY(0); X diubah menjadi Y
+  - ubah background-color: black; dan width menjadi width: 100%;
+  - ubah agar tampil didepan dengn ubah code pada breakpoint tablet menjadi z-index: 1;
+  - hamburger menu ketutupan saat menu tampil, tambahkan z-index: 2 / 9999; di .menu-toggle 
+
+40. Tampilan menu saat diklik terlihat berjejer ke kanan, padahal kita ingin berjajar ke bawah (karena project kita saat ini menngunakan grid, maka flexnya tidak berfungsi)
+  - caranya dengan tambahkan kode display: flex; pada breakpoint tablet 
+  - ubah dari nav ul menjadi .menu ul
+  - ubah dari nav ul.slide menjadi .menu ul.slide (karena specifity css)
+
+41. Tampilan ssat mobile masih kurang baik, feature-nya tampil kebawah satu2
+  - untuk breakpoint mobile dibuat 600px
+  - pada breakpoint handphone, buat grid-tempalte-areas menjadi satu kolol saja dengan kode  .header {
+    grid-template-areas: 
+    'hero'
+    'feature-1'
+    'feature-2'
+    ;
+  }
+
+42. header sudah selesai, tambahkan komponen lain 
+
+43. buat section dengan class .services, didalamnya nanti ada 4 class .service, di tiap2 class .service terdapat class .icon, tag h3 utnuk menampung tulisan, dan tag p menampung tulisan lorem15
+  - tambahkan code berikut di bagian akhir .container (kalau mau pakai emoji klik window + (.))
+      <section class="services">
+        <div class="service">
+          <div class="icon">💻</div>
+          <h3>Tutorial</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reiciendis, minima autem quod quasi ratione quos!
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="icon">🎓</div>
+          <h3>Online Course</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reiciendis, minima autem quod quasi ratione quos!
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="icon">🎙️</div>
+          <h3>Podcast</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reiciendis, minima autem quod quasi ratione quos!
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="icon">👕</div>
+          <h3>Merch</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reiciendis, minima autem quod quasi ratione quos!
+          </p>
+        </div>
+      </section>
+
+44. Buat style untuk services-nya 
+
+45. atur agar servicesnya menjadi grid 
+    - display grid dan kolom bisa responsive dengan code seperti di samping .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+   }
+
+46. atur tiap2 servicesnya
+  - atur code seperti di samping .service {
+      background-color: #fff;
+      padding: 15px;
+      text-align: center;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    }
+
+47. atur css pada .service icon (gambar ikon)
+  - .service .icon {
+      font-size: 3rem;
+    }
+
+48. atur css pada .service h3 dan .service p 
+  - .service h3 {
+      font-size: 1.5rem;
+    }
+
+    .service p {
+      font-weight: 200;
+      letter-spacing: 1px;
+      font-style: 0.8em;
+    }
+
+49. Karena unsplash harus menggunakan API, jadi harus buat akun dulu agar bisa memanfaatkan unsplash 
+
+50. Buat komponen galley seperti berikut 
+  -  <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+      </section>
+
+51. atur javascript sebagai berikut 
+      - document.addEventListener('DOMContentLoaded', () => {
+      const gallery = document.getElementById('gallery');
+
+      const fetchImages = async () => {
+        try {
+          const response = await fetch(
+            'https://api.unsplash.com/photos?per_page=10',
+            {
+              headers: {
+                Authorization:
+                  'Client-ID 89AomeS4Zo-eKjPTsI39QDpMYzeYpeab8URIGtpYHEI',
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error('Failed to fetch images');
+          }
+
+          const images = await response.json();
+
+          images.forEach((image) => {
+            const imgElement = document.createElement('img');
+            imgElement.src = image.urls.small;
+            imgElement.alt = image.alt_description || 'Unsplash Image';
+            gallery.appendChild(imgElement);
+          });
+        } catch (error) {
+          console.error('Error fetching images:', error);
+        }
+      };
+
+      fetchImages();
+    });
+
+52. atur css untuk galley sebagai berikut 
+  - .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        justify-items: center;
+        padding: 10px;
+      }
+
+      .gallery h2 {
+        grid-column: 1 / -1; /* Mengatur agar tulisan gallery menempati baris sendiri, tidak sejajar dengan gambar */
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 200px; /* Menetapkan tinggi tetap */
+        object-fit: cover; /* Menjaga rasio aspek dan memotong gambar jika diperlukan */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
