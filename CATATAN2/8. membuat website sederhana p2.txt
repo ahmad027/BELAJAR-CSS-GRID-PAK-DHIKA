@@ -1,0 +1,175 @@
+# lanjutan
+
+6. Buat CSS untuk header-nya dulu 
+
+  - buat .header menjadi display: grid;
+  - kita buat untuk header terdiri dari 3 kolom 2 baris 
+  - dengan cara menggunakan grid-template-areas: 'hero hero feature1'
+  'hero hero feature-2';
+
+7. Buat css untuk .hero
+  - pada .hero atur grid-area: hero;
+  - atur juga min-height (misal 300px) dan padding 50 px agar tulisannya tidak mepet ke pinggir gambar
+  - atur background-image: url(./img/gambarhero.jpg)
+  - atur background-size: cover; agar gambar seukuran dengan cover
+  - atur background-position: center; agar gambar berada di tengah 
+  - untuk tampilan dekstop tulisan pada hero dibuat tidak terlihat
+  - caranya dnegan kode css .hero > * {
+    display: none;
+  }
+  (bacanya, cari class hero apapun didalamnya (> *) buat display-nya tidak terlihat)
+
+8. Buat css untuk .features (ada dua features yang satu ada tambahan class features-1 yang lainnya ada tambahan features-2)
+  - untuk mencoba atur backround-color: black; color: white;
+  - untuk membuat content berda di tengah2 atur dengan display: grid; place-content: center;
+  - agar text selalu di tengah atur, text-align: center;
+  - buat agar cursor: pointer;
+
+9. atur css .feature-1 
+  - atur menjadi grid-area: feature-1; untuk mengisi sesuai yang sudah diatur pada grid-template-areas di .header 
+  - atur gambarnya menjadi gambar feature-1 misal dengan background-image: url(.img/gambarfeature1.jpg)
+  - atur background-size: cover; agar gambar sesuai ukuran cover 
+  - atur background-position: center; (kalau memang perlu di letakkan di tengah2)
+
+10. atur css .feature-2 
+  - atur menjadi grid-area: feature-2; untuk mengisi sesuai yang sudah diatur pada grid-template-areas di .header 
+  - atur gambarnya menjadi gambar feature-2 misal dengan background-image: url(.img/gambarfeature2.jpg)
+  - atur background-size: cover; agar gambar sesuai ukuran cover 
+  - atur background-position: center; (kalau memang perlu di letakkan di tengah2)
+
+11. atur harga pada .features .price 
+  - atur font-size: 3 em; agar terlihat lebih besar 
+  - atur ketebalan font agar lebih kecil dengan font-weight: 200;
+
+12. selanjutnya tambahkan struktur nav  
+   <nav class="menu">
+      <div class="brand">
+        <h1>Ahmad Merch</h1>
+      </div>
+      <ul class="menu-list">
+        <li><a href="">Home</a></li>
+        <li><a href="">Product</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Gallery</a></li>
+      </ul>
+    </nav>
+
+    - buat tag nav yang mempunyai class menu 
+    - di dalamnya untuk awal buat 2 elemen
+    - elemen pertama div dengan class brand, ada tulisan yang dibungkus tag <h1>
+    -elemen kedua menggunakan ul dengan class menu-list yang terdiri dari 4 list item link dengan tulisan seperti home, product, about, gallery 
+
+13. atur css untuk navigasi 
+
+14. atur css dulu pada .menu 
+    - buat display: grid;
+    - atur menjadi 2 kolom dengan ukuran 1fr untuk brand dan 2 fr untuk menu-list dengan grid-tempalte-column: 1fr 2fr;
+
+15. atur css pada tulisan .brand dengan .menu .brand 
+    - buat font-size: 1.3rem;
+    - buat color: #333;
+
+16. atur css pada .menu ul 
+    - atur agar hilang titik di depan dengan list-style: none;
+    - atur pembungkus dari li menjadi grid display: grid;
+    - agar li sejajar kita atur grid-template-column 
+    - supay rensponsif kita bisa gunakan repeat(auto-fit, minmax(100px, 1fr));
+    - bacanya (elemen didalmnya secukupnya, kita kasih lebar minimal 100px lebar maksimalnya 1fr ) karena kita tidak tahu berapa menunya, supaya dinamis kita atur dengan auto-fit
+
+17. atur tulisan pada .brand dan .menu-list tepat ditengah2  
+  - gunakan aign-items: center; di class menu. (coba saja align-content / align-item mana yang bisa berubah)
+  - untuk melihat dahlu, tambah background-color: salmon;
+
+18. atur css pada .menu a 
+  - buat display: block; agar samping dari tiap menu-list termasuk bisa diklik
+  - hilangkan garis dibawah dengan text-decoration: none;
+  - buat background-color: black; dan color: white;
+  - buat tulisan di tengah dengan text-align: center;
+  - buat padding: 5px; agar tulisan ada jaraknya 
+  - buat ukuran font-size: 0.9rem;
+  - buat semua tulisan kapital text-transform: uppercase;
+
+19. atur agar setiap menu list ada jaraknya
+  - tambah gap: 5px; pada .menu ul 
+
+20. Buat responsive breakpoint untuk beberapa device misal wide screen ( >1024px), default dekstop  ( 1024px), tablet (768px), handphone (500px)
+
+  // default dekstop
+  - @media (max-width: 1024px) {
+
+  }
+
+  // tablet
+  - @media (max-width: 768px) {
+    
+  }
+
+  // handphone
+  - @media (max-width: 500px) {
+    
+  }
+
+21. defaultnya diatas 1200px, harusnya navigasi (home dkk) berada di atas, setelah dibawah 1024px navigasi (home dkk) berada di bawah dan menghilngkan tulisan ahmad merch dan navigasi penuh 
+
+22. setting dulu .container menjadi grid 
+  - atur css .container {
+    display: grid;
+  }
+
+  seperti flex, grid itemnya bisa diatur urutannya 
+
+23. atur agar diatas ukuran 1024px menu diatas dengan menmabh order pada .menu
+  - tambah css di .menu dengan order: -1; agar navigasi bisa diatas kalau mode wide screen ( > 1024px)
+
+24. atur agar dibawah 1024px menu navigasi berada di bawah 
+  - atur di breakpoint default dekstop tambahkan aturan css untuk .menu {
+    order: inherit;
+  }
+
+  agar urutan navigasi kembali lagi diurutan awal (sesuai urutan kode html-nya )
+
+25. atur tulisan pada .brand hilang saat ukuran layar dibawah 1024px
+  - atur di breakpoint default dekstop tambahkan aturan css untuk .brand {
+    display: none
+  }
+
+  tulisan di .brand hilang jika ukuran layar dibwah 1024px 
+
+26. Ada problem, navigasi menjadi turun tidak penuh
+  - ini karena pada .menu diatur 2 kolom 1fr dan 2 fr 
+  - agar hanya satu kolom atur lagi di breakpoint default dekstop menjadi .menu {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+
+  kolom diatur hanya satu fr saja, kalau layar dibawah 1024px 
+
+27. tata letak telalu dempet, atur gap pada .container 
+  - tmbah aturan css pada .container {
+    display: grid;
+    gap: 10px;
+  }
+
+28. Kalau di lebar 1024px ke bawah, munculkan tulisan pada gambar di hero 
+  - awalnya tulisan di hero dibuat tidak terlihat .hero > * {
+    display: none;
+  }
+
+  - ubah di breakpoint default dekstop, codenya diubah menjadi display: block; (agar muncul)
+  - beri background-color: black; color: white; padding: 5px; margin-bottom: 5px;
+  
+29. atur agar tulisan tepat ditengah pinggir kiri gambar
+  - tambahkan css .hero pada breakpoint default dekstop dengan code .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-item: start;
+  }
+
+  - membuat flex agar tulisan bisa diatur tata letaknya
+  - karena flex, tulisan bersebelahan atur menjadi flex-direction menjadi column 
+  - karena diubah tata letaknya justify untuk vertikalnya, align untuk horizontalnya
+  - justify-content dibuat center
+  - align-item dibuat start ( dipinngir kiri gambar )
+
+30. pada tampilan tablet, navigasi hilang berubah menjadi tampilan menu hamburger (31:55)
